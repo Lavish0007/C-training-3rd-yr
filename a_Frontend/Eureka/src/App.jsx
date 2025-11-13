@@ -1,45 +1,29 @@
-import React, { useState } from "react";
-
-import Login from "../../../ABES-CE(2025-26)/BookApp/src/components/Login";
-import Register from "../../../ABES-CE(2025-26)/BookApp/src/components/Register";
+import React, { useEffect, useState } from 'react'
+import Fashion from './components/Fashion'
 
 function App() {
-  const [isLogin, setIsLogin] = useState(true);
+  const[books,setBooks]=useState([])
+  useEffect(()=>{
+    fetch('https://fakestoreapi.com/products')
+    .then(res=>res.json())
+    .then(data=>{
+      setBooks(data);
 
-  let title;
-  let form;
-  let toggleText;
-  let buttonText;
+    })
 
-  if (isLogin) {
-    title = "Login";
-    form = <Login />;
-    form = <Login/>;
-    toggleText = "Don't have an account?";
-    buttonText = "Register";
-  } else {
-    title = "Register";
-    form = <Register/>;
-    toggleText = "Already have an account?";
-    buttonText = "Login";
-  }
-
+  },[])
   return (
     <div>
-      <center>
-        <h2>{title}</h2>
-      </center>
+      {
+        books.map((b,i)=>(
+          <Fashion key={i} props={b}/>
 
-      {form}
+        ))
 
-      <p>
-        {toggleText}
-        <button onClick={() => setIsLogin(!isLogin)}>
-          {buttonText}
-        </button>
-      </p>
+      }
+      <Fashion/>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
