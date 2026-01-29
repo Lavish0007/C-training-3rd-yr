@@ -1,27 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import Fashion from './components/Fashion'
+
+import Card from './components/Card'
 
 function App() {
-  const[books,setBooks]=useState([])
-  useEffect(()=>{
-    fetch('https://fakestoreapi.com/products')
-    .then(res=>res.json())
-    .then(data=>{
-      setBooks(data);
-
-    })
-
-  },[])
+  
   return (
     <div>
-      {
-        books.map((b,i)=>(
-          <Fashion key={i} props={b}/>
-
-        ))
-
-      }
-      <Fashion/>
+      <Card img="https://via.placeholder.com/200" name="Sample Card" comp="Demo Component"/>
     </div>
   )
 }
