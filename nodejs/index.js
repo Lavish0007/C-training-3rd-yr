@@ -41,4 +41,4 @@
 // console.log(result)
 
 const fs=require('fs');
-fs.cpSync("class.txt","copy.txt")
+fs.cpSync("a.txt","copy.txt")
