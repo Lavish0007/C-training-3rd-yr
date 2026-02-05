@@ -40,5 +40,9 @@
 // });
 // console.log(result)
 
+// const fs=require('fs');
+// fs.cpSync("a.txt","copy.txt")
+
 const fs=require('fs');
-fs.cpSync("a.txt","copy.txt")
+fs.appendFileSync("./a.txt",` Students are coding `)
+console.log("Donee.")
