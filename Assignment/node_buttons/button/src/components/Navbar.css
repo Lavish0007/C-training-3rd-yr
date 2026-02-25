@@ -1,0 +1,39 @@
+.navbar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  background:#5100ff;
+  color:#fff;
+  z-index:1000;
+}
+.navbar-container{
+  max-width:1280px;
+  margin:0 auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0.5rem 1rem;
+}
+.navbar-left{
+  display:flex;
+  align-items:center;
+  gap:0.5rem;
+}
+.navbar-logo{
+  width:36px;
+  height:36px;
+}
+.navbar-brand{
+  font-weight:700;
+  font-size:1.1rem;
+}
+.navbar-item{
+  color:rgba(255,255,255,0.95);
+  text-decoration:none;
+  padding:0.35rem 0.6rem;
+  border-radius:6px;
+}
+.navbar-item.active{
+  background:rgba(255,255,255,0.12);
+}

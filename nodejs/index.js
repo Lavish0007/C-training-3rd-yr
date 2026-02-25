@@ -40,9 +40,38 @@
 // });
 // console.log(result)
 
-// const fs=require('fs');
-// fs.cpSync("a.txt","copy.txt")
+// const fs = require('fs');
 
-const fs=require('fs');
-fs.appendFileSync("./a.txt",` Students are coding `)
-console.log("Donee.")
+// fs.cp("a.txt", "copy.txt", (error) => {
+//     if (error) {
+//         console.log("Error:", error);
+//     } else {
+//         console.log("File copied successfully");
+//     }
+// });
+
+
+// const fs=require('fs');
+// fs.appendFileSync("./a.txt",`appending something`,(error)=>{
+//     if(error){
+//         console.log("Error",error)
+//     }else{
+//         console.log("Done.")
+//     }
+// })
+// console.log("Donee.")
+// fs.unlinkSync("./copy.txt");
+const os=require('os');
+const { fileURLToPath } = require('url');
+// console.log("platform",os.platform());
+// // console.log("user",os.userInfo());
+// console.log("CPU ",os.arch());
+// console.log("total memory ",os.totalmem());
+console.log(os.uptime());
+console.log(os.hostname());
+console.log(os.hostname());
+
+// totalmemory
+// freememory
+// create file
+// copy file

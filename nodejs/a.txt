@@ -1,1 +1,1 @@
-Students committee. Students are coding ./class.txt
+Students committee. Students are coding. appending something
