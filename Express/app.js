@@ -27,12 +27,39 @@ const stu=[{
     id:1,
     name:"Lavish",
     class:"Btech"
+},{
+    id:2,
+    name:"jay",
+    class:"bca"
+    
 }]
 
-// data read
+// data read(all data)
+app.get('/read',(req,res)=>{
+    try{
+        res.status(200).json({message:"Showing all data",data:stu});
+    }
+    catch(err){
+        res.status(500).json({message:"Data not found!",error:err.message})
+    }
+})
 
+//data show (for id)
+app.get('/about/:id',(req,res)=>{                      // called params -> parameter
+    try{
+        const id = Number(req.params.id);
+        const student=stu.find(s=>s.id===id);
+        if(!student){
+            return res.status(404).json({message:"Student not found",data:student});
+        }
+        res.status(200).json({message:"Data Found",data:student})
+    }
+    catch(err){
+        res.status(500).json({message:"Data not found!",error:err.message})
+    }
+})
 
 app.listen(port,()=>{
-    console.log(`server runs at https://localhost:${port}`)
+    console.log(`server runs at http://localhost:${port}`)
 })
 
